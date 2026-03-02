@@ -30,20 +30,35 @@ PM Skills Marketplace makes you better at deciding.
 This isn’t about generating text.
 It’s about product judgment.
 
-## Table of Contents
+## How It Works (Skills, Commands, Plugins)
 
-- [Installation](#installation)
-- [Skills, Commands, and Plugins](#skills-commands-and-plugins)
-- [Available Plugins](#available-plugins)
-  - [1. pm-product-discovery](#1-pm-product-discovery)
-  - [2. pm-product-strategy](#2-pm-product-strategy)
-  - [3. pm-execution](#3-pm-execution)
-  - [4. pm-market-research](#4-pm-market-research)
-  - [5. pm-data-analytics](#5-pm-data-analytics)
-  - [6. pm-go-to-market](#6-pm-go-to-market)
-  - [7. pm-marketing-growth](#7-pm-marketing-growth)
-  - [8. pm-toolkit](#8-pm-toolkit)
-- [About](#about)
+**Skills** are the building blocks of the marketplace. Each skill gives Claude domain knowledge, analytical frameworks, or a guided workflow for a specific PM task. Skills are loaded automatically when relevant to the conversation — no explicit invocation needed. Some skills also work as reusable foundations that multiple commands share.
+
+**Commands** are user-triggered workflows invoked with `/command-name`. They chain one or more skills into an end-to-end process. For example, `/discover` chains four skills together: brainstorm-ideas → identify-assumptions → prioritize-assumptions → brainstorm-experiments.
+
+**Plugins** group related skills and commands into installable packages. Each plugin covers a PM domain — discovery, strategy, execution, and so on. Installing the marketplace gives you all 8 plugins at once.
+
+Commands use skills. Some skills serve multiple commands. Some skills (like `prioritization-frameworks` or `opportunity-solution-tree`) are standalone references that Claude draws on whenever relevant — no command needed.
+
+Commands are designed to flow into each other, matching the PM workflow:
+
+```
+/strategy → /business-model → /pricing
+     ↓
+/discover → /brainstorm → /write-prd → /write-stories → /sprint plan
+     ↓              ↓           ↓
+/interview    /triage-requests  /pre-mortem
+     ↓
+/research-users → /analyze-feedback
+                       ↓
+/plan-launch → /growth-strategy → /battlecard
+     ↓
+/market-product → /north-star → /setup-metrics
+```
+
+After any command completes, it suggests relevant next commands — just follow the prompts.
+
+![How skills work](how-skills-work.webp)
 
 ## Installation
 
@@ -84,43 +99,11 @@ done
 
 ---
 
-## Skills, Commands, and Plugins
-
-**Skills** are the building blocks of the marketplace. Each skill gives Claude domain knowledge, analytical frameworks, or a guided workflow for a specific PM task. Skills are loaded automatically when relevant to the conversation — no explicit invocation needed. Some skills also work as reusable foundations that multiple commands share.
-
-**Commands** are user-triggered workflows invoked with `/command-name`. They chain one or more skills into an end-to-end process. For example, `/discover` chains four skills together: brainstorm-ideas → identify-assumptions → prioritize-assumptions → brainstorm-experiments.
-
-**Plugins** group related skills and commands into installable packages. Each plugin covers a PM domain — discovery, strategy, execution, and so on. Installing the marketplace gives you all 8 plugins at once.
-
-Commands use skills. Some skills serve multiple commands. Some skills (like `prioritization-frameworks` or `opportunity-solution-tree`) are standalone references that Claude draws on whenever relevant — no command needed.
-
-Commands are designed to flow into each other, matching the PM workflow:
-
-```
-/strategy → /business-model → /pricing
-     ↓
-/discover → /brainstorm → /write-prd → /write-stories → /sprint plan
-     ↓              ↓           ↓
-/interview    /triage-requests  /pre-mortem
-     ↓
-/research-users → /analyze-feedback
-                       ↓
-/plan-launch → /growth-strategy → /battlecard
-     ↓
-/market-product → /north-star → /setup-metrics
-```
-
-After any command completes, it suggests relevant next commands — just follow the prompts.
-
-![How skills work](how-skills-work.webp)
-
----
-
 ## Available Plugins
 
 ### 1. pm-product-discovery
 
-Continuous product discovery: ideation, experiments, assumption testing, feature prioritization, Opportunity Solution Trees, and customer interviews. Based on the work of Teresa Torres (*Continuous Discovery Habits*) and Dan Olsen (*The Lean Product Playbook*).
+Continuous product discovery: ideation, experiments, assumption testing, feature prioritization, Opportunity Solution Trees, and customer interviews.
 
 **Skills (13):**
 
@@ -395,6 +378,20 @@ Commands:
 ---
 
 ## About
+
+Selected skills based on the work of: 
+- Teresa Torres (*Continuous Discovery Habits*)
+- Marty Cagan (*Inspired*, *Transformed*)
+- Alberto Savoia (*The Right It*)
+- Dan Olsen (*The Lean Product Playbook*)
+- Roger Martin (*Playing to Win*)
+- Ash Maurya (*Running Lean*)
+- Strategyzer (*Business model Canvas*)
+- Christina Wodtke (*Radical Focus*)
+- Anthony W. Ulwick (*Jobs-to-do-Done*)
+- Alistair Croll and Benjamin Yoskovitz (*Lean Analytics*)
+- Sean Ellis (*Growth Hacking*)
+- Maja Voje (*Go-To-Market Strategist*)
 
 Curated by [The Product Compass Newsletter](https://www.productcompass.pm) by Paweł Huryn.
 
